@@ -12,5 +12,7 @@ int main() {
     print_sampled("res", res, N);
 
     runtime_endinness();
+    compiletime_endinness_1();
+    compiletime_endinness_2();
 
 }

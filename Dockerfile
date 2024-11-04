@@ -6,6 +6,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt update
 RUN apt install -y git cmake libssl-dev nano
 
+RUN echo "aaaa"
+
 # Clone
 WORKDIR /my
 RUN git clone --depth 1 https://github.com/rtjk/rejection-sampling-endianness
