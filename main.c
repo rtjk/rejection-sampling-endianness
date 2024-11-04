@@ -1,6 +1,7 @@
 
 #include "prng.h"
 #include "print.h"
+#include "endianness.h"
 
 int main() {
 
@@ -9,5 +10,7 @@ int main() {
     original_prng(res);
 
     print_sampled("res", res, N);
+
+    runtime_endinness();
 
 }

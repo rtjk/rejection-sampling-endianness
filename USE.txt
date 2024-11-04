@@ -1,1 +1,14 @@
+
+# BARE METAL
+
 rm main.o; gcc main.c -o main.o -g -fsanitize=address; ./main.o
+
+# DOCKER
+
+docker build -t endinnesstest .
+docker buildx build --platform=linux/s390x -t endinnesstest .
+docker run --rm -it endinnesstest
+
+# DOCKER OPTIONS
+
+--no-cache
