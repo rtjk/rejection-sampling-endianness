@@ -20,9 +20,13 @@ void compiletime_endinness_1() {
 
 void compiletime_endinness_2() {
     printf("compiletime_endinness_2: ");
-    #if __LITTLE_ENDIAN__
+    #ifdef __BIG_ENDIAN__
+        printf("BIGGGGGGG\n");
+    #endif
+
+    #if defined(__LITTLE_ENDIAN__)
         printf("LITTLE\n");
-    #elif __BIG_ENDIAN__
+    #elif defined(__BIG_ENDIAN__)
         printf("BIG\n");
     #else
         printf("UNKNOWN\n");
