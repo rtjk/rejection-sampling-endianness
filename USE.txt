@@ -1,0 +1,1 @@
+rm main.o; gcc main.c -o main.o -g -fsanitize=address; ./main.o
