@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt update
 RUN apt install -y git cmake libssl-dev nano
 
-RUN echo "aaaa"
+RUN echo "aaaaa"
 
 # Clone
 WORKDIR /my
