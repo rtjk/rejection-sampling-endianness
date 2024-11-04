@@ -19,10 +19,12 @@ STOPSIGNAL SIGTERM
 # Run
 WORKDIR /my/rejection-sampling-endianness
 ENTRYPOINT \
-    # WITH ADDRESS SANITIZER
+    # GCC WITH ADDRESS SANITIZER
     #rm main.o; gcc main.c -o main.o -g -fsanitize=address; ./main.o; \
-    # WITHOUT ADDRESS SANITIZER
+    # GCC WITHOUT ADDRESS SANITIZER
     #rm main.o; gcc main.c -o main.o; ./main.o; \
-    # CLANG
+    # CLANG WITH ADDRESS SANITIZER
+    #rm main.o; clang main.c -o main.o -fsanitize=address; ./main.o; \
+    # CLANG WITHOUT ADDRESS SANITIZER
     rm main.o; clang main.c -o main.o; ./main.o; \
     /bin/bash
