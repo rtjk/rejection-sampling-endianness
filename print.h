@@ -26,3 +26,18 @@ static void print_sampled(const char *name, uint8_t *array, unsigned long long l
     }
     printf("\n");
 }
+
+void print_bits(uint8_t num) {
+    for (int i = 7; i >= 0; i--) {
+        printf("%d", (num >> i) & 1);
+    }
+}
+
+void print_bytes(uint16_t num) {
+    uint8_t *byte_ptr = (uint8_t*)&num;
+    for (int i = 0; i < 2; i++) {
+        print_bits(byte_ptr[i]);
+        printf(" ");
+    }
+    printf("\n");
+}

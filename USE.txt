@@ -5,9 +5,9 @@ rm main.o; gcc main.c -o main.o -g -fsanitize=address; ./main.o
 
 # DOCKER
 
-docker build -t endiannesstest . && docker run --rm -it endiannesstest
-docker buildx build --platform=linux/s390x -t endiannesstest . && docker run --rm -it endiannesstest
-docker buildx build --platform=linux/ppc64le -t endiannesstest . && docker run --rm -it endiannesstest
+docker build --quiet -t endiannesstest . && docker run --rm -it endiannesstest
+docker buildx build --quiet --platform=linux/s390x -t endiannesstest . && docker run --rm -it endiannesstest
+docker buildx build --quiet --platform=linux/ppc64le -t endiannesstest . && docker run --rm -it endiannesstest
 
 # DOCKER OPTIONS
 

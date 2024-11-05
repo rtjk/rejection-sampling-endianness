@@ -22,9 +22,10 @@ ENTRYPOINT \
     # GCC WITH ADDRESS SANITIZER
     #rm main.o; gcc main.c -o main.o -g -fsanitize=address; ./main.o; \
     # GCC WITHOUT ADDRESS SANITIZER
-    #rm main.o; gcc main.c -o main.o; ./main.o; \
+    rm main.o; gcc main.c -o main.o; ./main.o; \
     # CLANG WITH ADDRESS SANITIZER
     #rm main.o; clang main.c -o main.o -fsanitize=address; ./main.o; \
     # CLANG WITHOUT ADDRESS SANITIZER
-    rm main.o; clang main.c -o main.o; ./main.o; \
-    /bin/bash
+    # rm main.o; clang main.c -o main.o; ./main.o; \
+    :
+    #/bin/bash

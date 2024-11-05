@@ -68,3 +68,13 @@ void compiletime_endianness_4() {
     #endif
     print_endianness(endianness);
 }
+
+void compiletime_endianness_5() {
+    int endianness = 0;
+    #if defined(__BYTE_ORDER__)&&(__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__) || defined(__BIG_ENDIAN__) || defined(__ARMEB__) || defined(__THUMBEB__) || defined(__AARCH64EB__) || defined(_MIPSEB)
+        endianness--;
+    #else
+        endianness++;
+    #endif
+    print_endianness(endianness);
+}
